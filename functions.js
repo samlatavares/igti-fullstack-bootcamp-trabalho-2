@@ -85,3 +85,90 @@ export function buscarCincoMenoresEstados() {
     console.log(item.estado + ' - ' + item.qtdCidades);
   });
 }
+
+export function buscarMaiorNomeCidadePorEstado() {
+  let cidadesFiltradas = [];
+
+  estados.forEach((estado) => {
+    let listaCidades = [];
+    cidadesFiltradas = cidades.filter((cidade) => {
+      return cidade.Estado === estado.ID;
+    });
+    cidadesFiltradas.forEach((cidade) => {
+      listaCidades.push({
+        uf: estado.Sigla,
+        nomeCidade: cidade.Nome,
+      });
+    });
+
+    listaCidades.sort((a, b) => {
+      return b.nomeCidade.length - a.nomeCidade.length;
+    });
+
+    console.log(listaCidades[0].nomeCidade + ' - ' + listaCidades[0].uf);
+  });
+}
+
+export function buscarMenorNomeCidadePorEstado() {
+  let cidadesFiltradas = [];
+
+  estados.forEach((estado) => {
+    let listaCidades = [];
+    cidadesFiltradas = cidades.filter((cidade) => {
+      return cidade.Estado === estado.ID;
+    });
+
+    cidadesFiltradas.forEach((cidade) => {
+      listaCidades.push({
+        uf: estado.Sigla,
+        nomeCidade: cidade.Nome,
+      });
+    });
+
+    listaCidades.sort((a, b) => {
+      return a.nomeCidade.length - b.nomeCidade.length;
+    });
+
+    console.log(listaCidades[0].nomeCidade + ' - ' + listaCidades[0].uf);
+  });
+}
+
+export function buscarMaiorNomeCidade() {
+  let listaCidades = [];
+  cidades.forEach((cidade) => {
+    let estado = estados.find((estado) => {
+      return estado.ID === cidade.Estado;
+    });
+
+    listaCidades.push({
+      uf: estado.Sigla,
+      nomeCidade: cidade.Nome,
+    });
+  });
+
+  listaCidades.sort((a, b) => {
+    return b.nomeCidade.length - a.nomeCidade.length;
+  });
+
+  console.log(listaCidades[0].nomeCidade + ' - ' + listaCidades[0].uf);
+}
+
+export function buscarMenorNomeCidade() {
+  let listaCidades = [];
+  cidades.forEach((cidade) => {
+    let estado = estados.find((estado) => {
+      return estado.ID === cidade.Estado;
+    });
+
+    listaCidades.push({
+      uf: estado.Sigla,
+      nomeCidade: cidade.Nome,
+    });
+  });
+
+  listaCidades.sort((a, b) => {
+    return a.nomeCidade.length - b.nomeCidade.length;
+  });
+
+  console.log(listaCidades[0].nomeCidade + ' - ' + listaCidades[0].uf);
+}
