@@ -102,7 +102,10 @@ export function buscarMaiorNomeCidadePorEstado() {
     });
 
     listaCidades.sort((a, b) => {
-      return b.nomeCidade.length - a.nomeCidade.length;
+      return (
+        b.nomeCidade.length - a.nomeCidade.length ||
+        a.nomeCidade.localeCompare(b.nomeCidade)
+      );
     });
 
     console.log(listaCidades[0].nomeCidade + ' - ' + listaCidades[0].uf);
@@ -126,7 +129,10 @@ export function buscarMenorNomeCidadePorEstado() {
     });
 
     listaCidades.sort((a, b) => {
-      return a.nomeCidade.length - b.nomeCidade.length;
+      return (
+        a.nomeCidade.length - b.nomeCidade.length ||
+        a.nomeCidade.localeCompare(b.nomeCidade)
+      );
     });
 
     console.log(listaCidades[0].nomeCidade + ' - ' + listaCidades[0].uf);
@@ -147,7 +153,10 @@ export function buscarMaiorNomeCidade() {
   });
 
   listaCidades.sort((a, b) => {
-    return b.nomeCidade.length - a.nomeCidade.length;
+    return (
+      b.nomeCidade.length - a.nomeCidade.length ||
+      a.nomeCidade.localeCompare(b.nomeCidade)
+    );
   });
 
   console.log(listaCidades[0].nomeCidade + ' - ' + listaCidades[0].uf);
@@ -167,7 +176,10 @@ export function buscarMenorNomeCidade() {
   });
 
   listaCidades.sort((a, b) => {
-    return a.nomeCidade.length - b.nomeCidade.length;
+    return (
+      a.nomeCidade.length - b.nomeCidade.length ||
+      a.nomeCidade.localeCompare(b.nomeCidade)
+    );
   });
 
   console.log(listaCidades[0].nomeCidade + ' - ' + listaCidades[0].uf);
