@@ -8,6 +8,6 @@ Project made during the IGTI's Fullstack Bootcamp. It's a Node.js project that m
 ## How to run the project?
 
 You can use Visual Studio Code to run this project.
-You'll need to import node packages. If you never worked with Node.js you can check the docs <a href="https://nodejs.org/en/docs/" target="_blank">here</a>.
+You'll need to import the File Stream. If you never worked with this you can check <a href="https://www.npmjs.com/package/filestream" target="_blank">this</a>.
 
 
